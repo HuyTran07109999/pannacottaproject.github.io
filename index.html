@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panna Cotta Shop</title>
+  <meta name="description" content="Bán panna cottta – đặt hàng nhanh, giao tận nơi." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#home" aria-label="Trang chủ">
+        <span class="brand__logo" aria-hidden="true">🍮</span>
+        <span class="brand__name">Panna Cotta Shop</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#products">Sản phẩm</a>
+        <a href="#reviews">Đánh giá</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+
+      <button class="cart-btn" type="button" id="openCartBtn" aria-label="Mở giỏ hàng">
+        🛒 Giỏ hàng <span class="cart-badge" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <div class="pill">Kem mịn • Vị thơm • Đặt nhanh</div>
+          <h1>Hương vị panna cottta “tan chảy” trong từng muỗng</h1>
+          <p class="lead">
+            Chọn vị bạn thích, thêm vào giỏ và checkout. Phù hợp tiệc nhỏ, sinh nhật, ăn vặt cuối tuần.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#products">Xem sản phẩm</a>
+            <a class="btn btn--ghost" href="#contact">Nhận tư vấn</a>
+          </div>
+
+          <div class="trust">
+            <div class="trust__item">✅ Giao tận nơi</div>
+            <div class="trust__item">🧊 Giữ lạnh lâu</div>
+            <div class="trust__item">🍓 Nguyên liệu tươi</div>
+          </div>
+        </div>
+
+        <div class="hero__card" aria-hidden="true">
+          <div class="hero__cardTop">
+            <span class="hero__stamp">BEST SELLER</span>
+          </div>
+          <div class="hero__flavor">
+            <div class="flavor-dot"></div>
+            <div>
+              <div class="hero__flavorTitle">Vị dâu • Vị vanilla</div>
+              <div class="hero__flavorDesc">Thơm ngậy – béo vừa – không ngán</div>
+            </div>
+          </div>
+          <div class="hero__imageMock">
+            <div class="glass glass--1"></div>
+            <div class="glass glass--2"></div>
+            <div class="glass glass--3"></div>
+          </div>
+          <div class="hero__cardBottom">
+            <div class="hero__price">
+              <span class="muted">Từ</span> <strong>39.000đ</strong>
+            </div>
+            <a class="btn btn--mini" href="#products">Chọn vị ngay</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section__head">
+          <h2>Sản phẩm nổi bật</h2>
+          <p>Click “Thêm vào giỏ” để mua. Bạn có thể chỉnh số lượng trong giỏ.</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Bộ lọc">
+          <button class="filter-btn is-active" data-filter="all" type="button">Tất cả</button>
+          <button class="filter-btn" data-filter="fruit" type="button">Trái cây</button>
+          <button class="filter-btn" data-filter="classic" type="button">Cổ điển</button>
+          <button class="filter-btn" data-filter="chocolate" type="button">Socola</button>
+        </div>
+
+        <div class="grid" id="productGrid">
+          <!-- JS sẽ render sản phẩm vào đây -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="reviews">
+      <div class="container">
+        <div class="section__head">
+          <h2>Khách hàng nói gì?</h2>
+          <p>Vài đánh giá để bạn yên tâm trước khi đặt.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="review">
+            <div class="review__stars">★★★★★</div>
+            <h3>Ngon, béo vừa</h3>
+            <p>“Ăn không bị ngấy. Mùi vanilla thơm, phần sốt dâu đậm vị.”</p>
+            <div class="review__meta">— Linh, 5 phút trước</div>
+          </article>
+          <article class="review">
+            <div class="review__stars">★★★★★</div>
+            <h3>Giao nhanh</h3>
+            <p>“Đóng gói sạch, giữ lạnh ổn. Mình đặt cho tiệc nhỏ mà ai cũng thích.”</p>
+            <div class="review__meta">— Minh, hôm qua</div>
+          </article>
+          <article class="review">
+            <div class="review__stars">★★★★☆</div>
+            <h3>Đẹp mắt</h3>
+            <p>“Lớp panna mịn, nhìn giống hình. Hợp làm quà.”</p>
+            <div class="review__meta">— Hân, 2 ngày trước</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact">
+        <div class="contact__left">
+          <h2>Nhận tư vấn / đặt theo yêu cầu</h2>
+          <p class="muted">Điền thông tin, hoặc gửi tin nhắn để shop phản hồi sớm.</p>
+
+          <form class="form" id="contactForm">
+            <label class="field">
+              <span>Họ tên</span>
+              <input required name="name" placeholder="Nguyễn Văn A" />
+            </label>
+
+            <label class="field">
+              <span>Số điện thoại</span>
+              <input required name="phone" placeholder="09xxxxxxxx" inputmode="tel" />
+            </label>
+
+            <label class="field">
+              <span>Nội dung</span>
+              <textarea required name="message" rows="4" placeholder="Ví dụ: cần 10 ly, giao chiều..."></textarea>
+            </label>
+
+            <button class="btn btn--primary" type="submit">Gửi yêu cầu</button>
+            <p class="form__note">* Demo form. Bạn có thể nối sang WhatsApp/Zalo sau.</p>
+          </form>
+        </div>
+
+        <aside class="contact__right">
+          <div class="infoCard">
+            <h3>Thông tin shop</h3>
+            <div class="infoRow">📍 Khu vực: Nội thành (tuỳ theo ngày)</div>
+            <div class="infoRow">⏰ Giờ bán: 09:00 - 21:00</div>
+            <div class="infoRow">📦 Đóng gói: ly + nắp + thùng giữ lạnh</div>
+            <div class="infoRow">💳 Thanh toán: tiền mặt / chuyển khoản</div>
+            <div class="divider"></div>
+            <div class="muted">
+              Mẹo: Nếu bạn muốn mình thêm phần “Thanh toán qua link” (Stripe/MoMo) thì nói mình biết bạn dùng nền tảng nào.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© <span id="year"></span> Panna Cotta Shop</div>
+      <div class="footer__links">
+        <a href="#products">Sản phẩm</a>
+        <a href="#contact">Liên hệ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART MODAL -->
+  <div class="modal" id="cartModal" aria-hidden="true">
+    <div class="modal__backdrop" id="cartBackdrop"></div>
+
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="modal__head">
+        <h2 id="cartTitle">Giỏ hàng</h2>
+        <button class="icon-btn" id="closeCartBtn" type="button" aria-label="Đóng giỏ hàng">✕</button>
+      </div>
+
+      <div class="modal__body">
+        <div class="cartEmpty" id="cartEmpty">
+          Giỏ hàng hiện đang trống. Hãy thêm một vài món panna cotta nhé!
+        </div>
+
+        <div class="cartList" id="cartList" aria-live="polite"></div>
+      </div>
+
+      <div class="modal__foot">
+        <div class="totals">
+          <div>Thành tiền:</div>
+          <div class="totals__value" id="cartTotal">0đ</div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn--ghost" id="clearCartBtn" type="button">Xoá</button>
+          <button class="btn btn--primary" id="checkoutBtn" type="button" disabled>
+            Checkout
+          </button>
+        </div>
+
+        <div class="muted small" id="checkoutHint">
+          Demo checkout: sẽ hiện thông tin đơn hàng để bạn copy/nhắn shop.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
